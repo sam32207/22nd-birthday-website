@@ -1,132 +1,77 @@
 body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: pink;
   margin: 0;
-  background: #f5f5f5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  font-family: sans-serif;
-  overflow: hidden;
+  padding: 0;
 }
 
-/* Envelope */
 .envelope {
+  width: 200px;
+  height: 150px;
+  background: #ffb6c1;
+  margin: 100px auto;
   position: relative;
-  width: 350px;
-  height: 220px;
-  background: #CCD8EA;
-  background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  border-radius: 4px;
   cursor: pointer;
-  transition: transform 1s;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
-
-.envelope-flap {
+.envelope .flap {
+  width: 0;
+  height: 0;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-bottom: 75px solid #ff69b4;
   position: absolute;
-  top: 0;
+  top: -75px;
   left: 0;
-  width: 100%;
-  height: 50%;
-  background: #CCD8EA;
-  background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
-  transform-origin: top;
-  transition: transform 1s;
-  z-index: 2;
 }
-
-.envelope.open .envelope-flap {
-  transform: rotateX(-180deg);
-}
-
-.envelope-body {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  border-radius: 4px;
-}
-
-.wax-seal {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #152F60;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  box-shadow: inset -5px -5px 10px rgba(0,0,0,0.4), inset 5px 5px 10px rgba(255,255,255,0.3);
-  font-size: 24px;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Papers */
-.papers {
+.envelope .letter {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 400px;
-  height: 500px;
   transform: translate(-50%, -50%);
+  font-weight: bold;
+  color: white;
+}
+
+.hidden {
   display: none;
 }
 
-.paper {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #fff;
-  background-image: url("https://www.transparenttextures.com/patterns/white-paper.png");
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  border-radius: 6px;
-  padding: 30px;
-  transform-origin: bottom left;
-  backface-visibility: hidden;
-  transition: transform 1s;
-}
-
 .page {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
 }
 
-.page h1 {
-  font-family: 'Rock Salt', cursive;
-  color: #132842;
-  font-size: 28px;
-  text-align: center;
+pre {
+  text-align: left;
+  white-space: pre-wrap;
+  font-size: 14px;
 }
 
-.letter {
-  font-family: 'Shadows Into Light', cursive;
-  font-size: 18px;
-  line-height: 1.6;
-  color: #132842;
-}
-
-.photos {
-  display: flex;
-  flex-wrap: wrap;
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
 }
-
-.photos img {
-  width: 120px;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+.gallery img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
 }
 
-.next-btn {
-  align-self: flex-end;
-  background: none;
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
   border: none;
-  font-size: 24px;
+  background: hotpink;
+  color: white;
+  font-size: 16px;
+  border-radius: 6px;
   cursor: pointer;
-  color: #132842;
+}
+button:hover {
+  background: deeppink;
 }
